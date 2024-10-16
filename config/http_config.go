@@ -240,8 +240,8 @@ type OAuth2 struct {
 	Scopes          []string          `yaml:"scopes,omitempty" json:"scopes,omitempty"`
 	TokenURL        string            `yaml:"token_url" json:"token_url"`
 	EndpointParams  map[string]string `yaml:"endpoint_params,omitempty" json:"endpoint_params,omitempty"`
-	TLSConfig       TLSConfig         `yaml:"tls_config,omitempty"`
-	ProxyConfig     `yaml:",inline"`
+	TLSConfig       TLSConfig         `yaml:"tls_config,omitempty" json:"tls_config,omitempty"`
+	ProxyConfig     `yaml:",inline" json:",inline"`
 }
 
 // UnmarshalYAML implements the yaml.Unmarshaler interface
@@ -320,7 +320,7 @@ type HTTPClientConfig struct {
 	// marshalled configuration when set to false.
 	EnableHTTP2 bool `yaml:"enable_http2" json:"enable_http2"`
 	// Proxy configuration.
-	ProxyConfig `yaml:",inline"`
+	ProxyConfig `yaml:",inline" json:",inline"`
 	// HTTPHeaders specify headers to inject in the requests. Those headers
 	// could be marshalled back to the users.
 	HTTPHeaders *Headers `yaml:"http_headers,omitempty" json:"http_headers,omitempty"`
