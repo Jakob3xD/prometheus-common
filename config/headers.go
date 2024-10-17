@@ -51,7 +51,7 @@ var reservedHeaders = map[string]struct{}{
 
 // Headers represents the configuration for HTTP headers.
 type Headers struct {
-	Headers map[string]Header `yaml:",inline"`
+	Headers map[string]Header `yaml:",inline" json:",inline"`
 }
 
 func (h Headers) MarshalJSON() ([]byte, error) {

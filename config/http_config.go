@@ -166,6 +166,8 @@ func (a *Authorization) SetDirectory(dir string) {
 }
 
 // URL is a custom URL type that allows validation at configuration load time.
+// +kubebuilder:validation:Type=string
+// +kubebuilder:validation:Pattern=.+
 type URL struct {
 	*url.URL
 }
